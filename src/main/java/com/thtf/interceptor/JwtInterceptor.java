@@ -27,13 +27,13 @@ import javax.servlet.http.HttpServletResponse;
  * ========================
  */
 @Slf4j
-public class JwtInterceptor extends HandlerInterceptorAdapter{
+public class JwtInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
     private Audience audience;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         // 忽略带JwtIgnore注解的请求, 不做后续token认证校验
         if (handler instanceof HandlerMethod) {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
@@ -58,11 +58,11 @@ public class JwtInterceptor extends HandlerInterceptorAdapter{
         }
 
         // 获取token
-        final String token = authHeader.substring(7);
+        final String token = authHeader.substring(JwtTokenUtil.TOKEN_PREFIX.length());
 
-        if(audience == null){
+        if (audience == null) {
             BeanFactory factory = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
-            audience = (Audience) factory.getBean("audience");
+            audience = factory.getBean(Audience.class);
         }
 
         // 验证token是否有效--无效已做异常抛出，由全局异常处理后返回对应信息

@@ -73,7 +73,8 @@ public class JwtTokenUtil {
             String encryId = Base64Util.encode(userId);
 
             //添加构成JWT的参数
-            JwtBuilder builder = Jwts.builder().setHeaderParam("typ", "JWT")
+            JwtBuilder builder = Jwts.builder()
+                    .setHeaderParam("typ", "JWT")
                     // 可以将基本不重要的对象信息放到claims
                     .claim("role", role)
                     .claim("userId", userId)
@@ -82,6 +83,7 @@ public class JwtTokenUtil {
                     .setIssuedAt(new Date())        // 是一个时间戳，代表这个JWT的签发时间；
                     .setAudience(audience.getName())          // 代表这个JWT的接收对象；
                     .signWith(signatureAlgorithm, signingKey);
+
             //添加Token过期时间
             int TTLMillis = audience.getExpiresSecond();
             if (TTLMillis >= 0) {
