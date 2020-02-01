@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
@@ -31,7 +32,7 @@ public class AdminUserController {
 
     @PostMapping("/login")
     @JwtIgnore
-    public Result adminLogin(HttpServletResponse response, String username,String password) {
+    public Result adminLogin(HttpServletResponse response, String username, String password) {
         // 这里模拟测试, 默认登录成功，返回用户ID和角色信息
         String userId = UUID.randomUUID().toString();
         String role = "admin";
@@ -49,8 +50,9 @@ public class AdminUserController {
     }
 
     @GetMapping("/users")
-    public Result userList() {
+    public Result userList(@RequestAttribute String userId,@RequestAttribute String role) {
         log.info("### 查询所有用户列表 ###");
+        log.info("### userId:{},role:{} ###", userId, role);
         return Result.SUCCESS();
     }
 }

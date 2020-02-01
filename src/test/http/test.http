@@ -1,0 +1,8 @@
+POST http://127.0.0.1:8080/login?username=zjb&password=123
+
+###
+
+GET http://127.0.0.1:8080/users
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOiIxODUyZmNkNy05ZDQwLTRhN2ItODk0Yi1jZjEzNjI2NWNkMDciLCJzdWIiOiJ6amIiLCJpc3MiOiIwOThmNmJjZDQ2MjFkMzczY2FkZTRlODMyNjI3YjRmNiIsImlhdCI6MTU4MDUyNTg4MywiYXVkIjoicmVzdGFwaXVzZXIiLCJleHAiOjE1ODA2OTg2ODMsIm5iZiI6MTU4MDUyNTg4M30.1KPzrRRw1dRNoK9djK5Ozc4GkFe5vVjIe_rotoV-DYs
+
+###

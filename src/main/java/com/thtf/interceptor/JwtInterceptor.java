@@ -5,6 +5,7 @@ import com.thtf.common.exception.CustomException;
 import com.thtf.common.response.ResultCode;
 import com.thtf.model.Audience;
 import com.thtf.util.JwtTokenUtil;
+import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.BeanFactory;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * ========================
@@ -66,7 +68,12 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
         }
 
         // 验证token是否有效--无效已做异常抛出，由全局异常处理后返回对应信息
-        JwtTokenUtil.parseJWT(token, audience.getBase64Secret());
+        Claims claims = JwtTokenUtil.parseJWT(token, audience.getBase64Secret());
+
+        // 将token中携带的有效数据放到请求中
+        for (Map.Entry<String, Object> stringObjectEntry : claims.entrySet()) {
+            request.setAttribute(stringObjectEntry.getKey(), stringObjectEntry.getValue());
+        }
 
         return true;
     }
