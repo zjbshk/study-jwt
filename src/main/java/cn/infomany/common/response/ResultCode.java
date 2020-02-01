@@ -1,4 +1,4 @@
-package com.thtf.common.response;
+package cn.infomany.common.response;
 
 
 /**

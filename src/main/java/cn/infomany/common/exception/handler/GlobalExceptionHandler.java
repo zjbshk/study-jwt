@@ -1,8 +1,8 @@
-package com.thtf.common.exception.handler;
+package cn.infomany.common.exception.handler;
 
-import com.thtf.common.exception.CustomException;
-import com.thtf.common.response.Result;
-import com.thtf.common.response.ResultCode;
+import cn.infomany.common.exception.CustomException;
+import cn.infomany.common.response.Result;
+import cn.infomany.common.response.ResultCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;

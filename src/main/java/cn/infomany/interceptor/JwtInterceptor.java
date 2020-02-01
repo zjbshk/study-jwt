@@ -1,10 +1,10 @@
-package com.thtf.interceptor;
+package cn.infomany.interceptor;
 
-import com.thtf.annotation.JwtIgnore;
-import com.thtf.common.exception.CustomException;
-import com.thtf.common.response.ResultCode;
-import com.thtf.model.Audience;
-import com.thtf.util.JwtTokenUtil;
+import cn.infomany.annotation.JwtIgnore;
+import cn.infomany.common.exception.CustomException;
+import cn.infomany.common.response.ResultCode;
+import cn.infomany.model.Audience;
+import cn.infomany.util.JwtTokenUtil;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

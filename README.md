@@ -124,9 +124,9 @@ Authorization: Bearer <token>
 ```
 package com.thtf.util;
 
-import com.thtf.common.exception.CustomException;
-import com.thtf.common.response.ResultCode;
-import com.thtf.model.Audience;
+import CustomException;
+import ResultCode;
+import Audience;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -260,11 +260,11 @@ public class JwtTokenUtil {
 ```
 package com.thtf.interceptor;
 
-import com.thtf.annotation.JwtIgnore;
-import com.thtf.common.exception.CustomException;
-import com.thtf.common.response.ResultCode;
-import com.thtf.model.Audience;
-import com.thtf.util.JwtTokenUtil;
+import JwtIgnore;
+import CustomException;
+import ResultCode;
+import Audience;
+import JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.BeanFactory;
@@ -337,7 +337,7 @@ public class JwtInterceptor extends HandlerInterceptorAdapter{
 ```
 package com.thtf.config;
 
-import com.thtf.interceptor.JwtInterceptor;
+import JwtInterceptor;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -388,10 +388,10 @@ public class WebConfig implements WebMvcConfigurer {
 package com.thtf.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.thtf.annotation.JwtIgnore;
-import com.thtf.common.response.Result;
-import com.thtf.model.Audience;
-import com.thtf.util.JwtTokenUtil;
+import JwtIgnore;
+import Result;
+import Audience;
+import JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

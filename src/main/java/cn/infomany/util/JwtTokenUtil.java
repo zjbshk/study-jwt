@@ -1,8 +1,8 @@
-package com.thtf.util;
+package cn.infomany.util;
 
-import com.thtf.common.exception.CustomException;
-import com.thtf.common.response.ResultCode;
-import com.thtf.model.Audience;
+import cn.infomany.common.exception.CustomException;
+import cn.infomany.model.Audience;
+import cn.infomany.common.response.ResultCode;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,6 @@
-package com.thtf.config;
+package cn.infomany.config;
 
-import com.thtf.interceptor.JwtInterceptor;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
+import cn.infomany.interceptor.JwtInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

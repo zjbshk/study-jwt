@@ -1,4 +1,4 @@
-package com.thtf.common.response;
+package cn.infomany.common.response;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

@@ -1,8 +1,8 @@
-package com.thtf.common.exception;
+package cn.infomany.common.exception;
 
 
 
-import com.thtf.common.response.ResultCode;
+import cn.infomany.common.response.ResultCode;
 
 import java.text.MessageFormat;
 

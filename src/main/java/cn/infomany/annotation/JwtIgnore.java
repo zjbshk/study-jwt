@@ -1,4 +1,4 @@
-package com.thtf.annotation;
+package cn.infomany.annotation;
 
 import java.lang.annotation.*;
 

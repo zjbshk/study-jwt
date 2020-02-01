@@ -1,4 +1,4 @@
-package com.thtf.model;
+package cn.infomany.model;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

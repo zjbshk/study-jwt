@@ -1,10 +1,10 @@
-package com.thtf.controller;
+package cn.infomany.controller;
 
+import cn.infomany.annotation.JwtIgnore;
 import com.alibaba.fastjson.JSONObject;
-import com.thtf.annotation.JwtIgnore;
-import com.thtf.common.response.Result;
-import com.thtf.model.Audience;
-import com.thtf.util.JwtTokenUtil;
+import cn.infomany.common.response.Result;
+import cn.infomany.model.Audience;
+import cn.infomany.util.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

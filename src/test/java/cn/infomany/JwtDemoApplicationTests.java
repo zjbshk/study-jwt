@@ -1,4 +1,4 @@
-package com.thtf;
+package cn.infomany;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

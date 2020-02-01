@@ -1,4 +1,4 @@
-package com.thtf.util;
+package cn.infomany.util;
 
 import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
